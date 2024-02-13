@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block content %}
+<html><head>
+    <!--CSSを埋め込む-->
+    <link rel="stylesheet"
+    href="{{url_for('static',filename='style.css')}}">
+    <style>
+        /* スマートフォン対応 */
+        @media screen and (max-width: 768px) {
+          body {
+            font-size: 18px;
+          }
+        }
+      </style>
+
+
+<img src="/image/R3.jpg" alt="写真">
+<h1>実施店舗入力</h1>
+    <form method="POST" action="#">
+    <!--<form action="/storepost" method="POST">-->
+        <table border="2">
+        <tr>
+            <th>実施日入力</th>
+        </tr>
+        <tr>
+            <td>
+                <input type="date" required="required", name="date" value={{date}} >
+            </td>
+        </tr>
+    </table>
+    <table border="2">
+        <tr>
+            <th>店舗コード入力</th>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" required="required" minlength="6" maxlength="6" , name="storeNo"  value={{storeNo}} >
+            </td>
+        </tr>
+    </table>
+    <input type="submit" value="次へ" >
+</form>
+<a href="/logout"  role="botton">ログアウト</a>
+<!--<a href="/"  role="botton">DB登録確認画面</a>-->
+</head></html>
+{% endblock %}

@@ -1,0 +1,167 @@
+【社員情報】
+create table user (
+Unum integer primary key autoincrement,
+roster integer not null,
+name text not null,
+password text not null
+);
+
+INSERT INTO テーブル名
+            (列名1, 列名2, 列名3)
+     VALUES (値1, 値2, 値3)
+     
+insert into user(roster,name,password)
+values ('1100145','大木 尚','1234');
+
+insert into user(roster,name,password)
+values ('1100008','網川 禎幸','1234');
+
+【店舗情報】
+create table storeMst (
+Unum integer primary key autoincrement,
+storeNo integer not null,
+kigyo text not null,
+store text not null,
+pattern text not null
+);
+
+insert into storeMst(storeNo,kigyo,store,pattern)
+values ('0000100001','株式会社ｾﾌﾞﾝ-ｲﾚﾌﾞﾝ･ｼﾞｬﾊﾟﾝ','ﾆｾｺ(旧)','1');
+
+【料金マスタ】
+create table priceMst (
+Unum integer primary key autoincrement,
+patternNo integer not null,
+kigyo text not null
+);
+insert into priceMst(patternNo,kigyo)
+values ('1','基本');
+
+【ケース基本】
+create table　case (
+Unum integer primary key autoincrement,
+date DATETIME not null,
+storeNo integer not null,
+kigyo text not null,
+45L text not null,
+60L text not null,
+oricon text not null,
+case text not null,
+
+【実績】
+create table storeDat (
+Unum integer primary key autoincrement,
+date DATETIME not null,
+storeNo integer not null,
+kigyo text not null,
+store text not null
+);
+
+ALTER TABLE storeDat ADD 
+foL integer;
+siL integer;
+oricon integer;
+cas integer;
+sake integer;
+
+ALTER TABLE storeDat total integer;
+oric integer
+tape integer
+cae integer
+total integer;
+
+【勤怠】
+create table kintai (
+Unum integer primary key autoincrement,
+datid integer,
+roster text,
+date DATETIME,
+leader integer,
+storein DATETIME,
+storeout DATETIME,
+kyus DATETIME,
+kyue DATETIME,
+kotue DATETIME,
+kotuk DATETIME,
+biko text
+);
+
+
+
+ALTER TABLE テーブル名 ADD カラム名 カラム定義 [FIRST | AFTER カラム名];
+
+insert into storeDat(date,storeNo,kigyo,store)
+values ('2023/12/27/16:18','0000100001','株式会社ｾﾌﾞﾝ-ｲﾚﾌﾞﾝ･ｼﾞｬﾊﾟﾝ','ﾆｾｺ(旧)');
+
+
+
+
+
+patternNo integer not null,
+kigyo text not null
+);
+
+
+insert into priceMst(patternNo,kigyo)
+values ('1','基本');
+
+
+
+
+
+
+
+StApp.db   2023.12.27 -----------------------------------------------------------
+user
+  roster    name     password
+1 1100145  大木 尚   1234
+
+storeMst
+
+  storeNo    kigyo                      store   pattern
+1  100001   株式会社ｾﾌﾞﾝ-ｲﾚﾌﾞﾝ･ｼﾞｬﾊﾟﾝ  ﾆｾｺ(旧)    1
+
+priceMst
+  pattrenNo  kigyo
+1   1       基本
+
+---------------------------------------------------------------------------------
+
+
+<!--<input type="submit" value="送信">
+<a href="{{ url_for('sample_form_return',date=date,storeNo=storeNo,kigyo=kigyo)}}">次へ</a>-->
+
+
+<table>
+　<tr>
+　　<th>名前</th><th>年齢</th><th>職業</th>
+　</tr>
+　<tr>　
+　　<td>Aさん</td>
+　　<td>30</td>
+   <td>デザイナー</td>
+　</tr>
+　<tr>
+   <td>Bさん</td>
+   <td>22</td>
+　　<td>コーダー</td>
+　</tr>
+</table>
+
+SELECT * FROM テーブル1 JOIN テーブル2 ON テーブル1.user_id = テーブル2.user_id JOIN テーブル3 ON テーブル1.user_id = テーブル3.user_id WHERE テーブル1.user_id = 値 
+
+SELECT * FROM kintai JOIN user ON kintai.roster = user.roster JOIN storeDat ON kintai.datid = storeDat.id WHERE kintai.datid=313
+
+00002 株式会社ﾛｰｿﾝ
+00001 留萌駅前
+200001   株式会社ﾛｰｿﾝ  留萌駅前  2
+
+UPDATE storeMst set storeNo='200001',kigyo='株式会社ﾛｰｿﾝ',store='留萌駅前',pattern=2 where id=2
+
+UPDATE テーブル名 SET 列名1 = 値1, 列名2 = 値2
+
+
+
+
+
+

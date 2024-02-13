@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+{% block content %}
+<html><head>
+    <!--CSSを埋め込む-->
+    <link rel="stylesheet"
+    href="{{url_for('static',filename='style.css')}}">
+    <style>
+        /* スマートフォン対応 */
+        @media screen and (max-width: 768px) {
+          body {
+            font-size: 18px;
+          }
+        }
+    </style>
+    <!--ブラウザバック禁止　JavaScript-->
+    <script>
+        window.onload = function() {
+        history.pushState(null, null, null);
+        window.addEventListener("popstate", function (e) {
+        history.pushState(null, null, null);
+        return;});};
+    </script>
+  
+<img src="/image/R3.jpg" alt="写真">
+<h1>勤怠入力画面</h1>
+<!--<form method="POST">-->
+
+<P>勤怠情報入力してください。</P>
+<P1>店舗情報</P1>
+    <form action="/{{id}}/{{post.date}}/kintai" method="POST" >
+        <table border="2">
+            <tr>
+                <th>ID</th>
+                <th>実施日</th>
+                <th>店舗NO</th>
+                <th>企業名</th>
+                <th>店舗名</th>
+            </tr>
+             <tr>
+                <td>{{id}}</td>
+                <td>{{post.date}}</td>
+                <td>{{post.storeNo}}</td>
+                <td>{{post.kigyo}}</td>
+                <td>{{post.store}}</td>
+            </tr>
+        </table>  
+        
+        <h3>交通費なしの場合は0で入力してください</h3>
+        <P1>勤怠情報入力</P1>
+        <table border="2">
+            <tr>
+                <th>社員番号</th><!--<th>氏名</th>--><th>リーダー</th><!--<th>合計カゴ車台数</th>--><th>開始</th><th>終了</th><th>休憩開始</th> <th>休憩終了</th><th>交通費(円)</th><th>交通費(km)</th><th>備考</th>
+            </tr>
+            <tr>
+                <td width="60"><input type="text" minlength="7" maxlength="7", name="roster1"  value="{{roster1}}"></td>
+                <!--<td>{{name}}</td>-->
+                <td><input type="radio", name="leader1" value="1"></td>
+                <!--<td>{{total}}</td>-->
+                <td><input type="time", name="storein1" value="{{storein1}}"></td>
+                <td><input type="time", name="storeout1" value="{{storeout1}}"></td>
+                <td><input type="time", name="kyus1" value="{{kyus1}}"></td>
+                <td><input type="time", name="kyue1" value="{{kyue1}}"></td>
+                <td><input type="int", name="kotue1" value="{{kotue1}}"></td>
+                <td><input type="int", name="kotuk1" value="{{kotuk1}}"></td>
+                <td><input type="text", name="biko1" value="{{biko1}}"></td>
+            </tr>
+            <tr>
+                <td width="60"><input type="text" minlength="7" maxlength="7", name="roster2"  value="{{roster2}}"></td>
+                <!--<td>{{name}}</td>-->
+                <td><input type="radio", name="leader2" value="1"></td>
+                <!--<td>{{total}}</td>-->
+                <td><input type="time", name="storein2" value="{{storein2}}"></td>
+                <td><input type="time", name="storeout2" value="{{storeout2}}"></td>
+                <td><input type="time", name="kyus2" value="{{kyus2}}"></td>
+                <td><input type="time", name="kyue2" value="{{kyue2}}"></td>
+                <td><input type="int", name="kotue2" value="{{kotue2}}"></td>
+                <td><input type="int", name="kotuk2" value="{{kotuk2}}"></td>
+                <td><input type="text", name="biko2" value="{{biko2}}"></td>
+            </tr> 
+            <tr>
+                <td width="60"><input type="text" minlength="7" maxlength="7", name="roster3"  value="{{roster3}}"></td>
+                <!--<td>{{name}}</td>-->
+                <td><input type="radio", name="leader3" value="1"></td>
+                <!--<td>{{total}}</td>-->
+                <td><input type="time", name="storein3" value="{{storein3}}"></td>
+                <td><input type="time", name="storeout3" value="{{storeout3}}"></td>
+                <td><input type="time", name="kyus3" value="{{kyus3}}"></td>
+                <td><input type="time", name="kyue3" value="{{kyue3}}"></td>
+                <td><input type="int", name="kotue3" value="{{kotue3}}"></td>
+                <td><input type="int", name="kotuk3" value="{{kotuk3}}"></td>
+                <td><input type="text", name="biko3" value="{{biko3}}"></td>
+            </tr>  
+            <tr>
+                <td width="60"><input type="text" minlength="7" maxlength="7", name="roster4"  value="{{roster4}}"></td>
+                <!--<td>{{name}}</td>-->
+                <td><input type="radio", name="leader4" value="1"></td>
+                <!--<td>{{total}}</td>-->
+                <td><input type="time", name="storein4" value="{{storein4}}"></td>
+                <td><input type="time", name="storeout4" value="{{storeout4}}"></td>
+                <td><input type="time", name="kyus4" value="{{kyus4}}"></td>
+                <td><input type="time", name="kyue4" value="{{kyue4}}"></td>
+                <td><input type="int", name="kotue4" value="{{kotue4}}"></td>
+                <td><input type="int", name="kotuk4" value="{{kotuk4}}"></td>
+                <td><input type="text", name="biko4" value="{{biko4}}"></td>
+            </tr>  
+            <tr>
+                <td width="60"><input type="text" minlength="7" maxlength="7", name="roster5"  value="{{roster5}}"></td>
+                <!--<td>{{name}}</td>-->
+                <td><input type="radio", name="leader5" value="1"></td>
+                <!--<td>{{total}}</td>-->
+                <td><input type="time", name="storein5" value="{{storein5}}"></td>
+                <td><input type="time", name="storeout5" value="{{storeout5}}"></td>
+                <td><input type="time", name="kyus5" value="{{kyus5}}"></td>
+                <td><input type="time", name="kyue5" value="{{kyue5}}"></td>
+                <td><input type="int", name="kotue5" value="{{kotue5}}"></td>
+                <td><input type="int", name="kotuk5" value="{{kotuk5}}"></td>
+                <td><input type="text", name="biko5" value="{{biko5}}"></td>
+            </tr>                      
+        </table>  
+   
+        <input type="submit" value="登録・次へ" > 
+    </form>
+    <a href="/logout"  role="botton">ログアウト</a>
+</head></html>
+            
+{% endblock %}

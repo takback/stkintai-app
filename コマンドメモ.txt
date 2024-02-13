@@ -1,0 +1,8 @@
+select id,date,storeNo,kigyo,store from storeDat where id = (SELECT MAX(id) FROM storeDat);
+
+
+db.session.flush()
+id = [row['id'] for row in db.session.execute("SELECT last_insert_rowid() as id")][0]
+
+
+flask --app app --debug run --host='192.168.1.14' --port=5000

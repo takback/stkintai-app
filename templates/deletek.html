@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block content %}
+<html><head>
+    <!--CSSを埋め込む-->
+    <link rel="stylesheet"
+    href="{{url_for('static',filename='style.css')}}">
+</head></html>
+
+<img src="/image/R3.jpg" alt="写真">
+<h1>削除</h1>
+<p>以下のメモを削除しますか？</p>
+<form method="POST">
+    <table border="2">
+        <tr>   
+                <th>ID</th>   
+                <th>実施ID</th>
+                <th>社員番号</th>
+                <th>実施日</th>
+                <th>リーダー</th>
+                <th>開始</th>
+                <th>終了</th>
+                <th>休憩開始</th>
+                <th>休憩終了</th>
+                <th>交通費(円)</th>
+                <th>交通費(Km)</th>
+                <th>備考</th>
+        </tr>
+        <tr>
+            <td>
+                <input type="text", name="unum" value="{{post.unum}}" disabled>
+            </td>
+            <td>
+                <input type="text", name="datid" value="{{post.datid}}" disabled>
+            </td>
+            <td>
+                <input type="text", name="roster" value="{{post.roster}}" disabled>
+            </td>
+            <td>
+                <input type="text", name="date" value="{{post.date}}" disabled> 
+            </td>
+            <td>
+                <input type="text", name="leader" value="{{post.leader}}" disabled>
+            </td>
+            <td>
+                <input type="text", name="storein" value="{{post.storein}}" disabled> 
+            </td>
+            <td>
+                <input type="text", name="storeout" value="{{post.storeout}}" disabled>
+            </td>
+            <td>
+                <input type="text", name="kyus" value="{{post.kyus}}" disabled> 
+            </td>
+            <td>
+                <input type="text", name="kyue" value="{{post.kyue}}" disabled>
+            </td>
+            <td>
+                <input type="text", name="kotue" value="{{post.kotue}}" disabled> 
+            </td>
+            <td>
+                <input type="text", name="kotuk" value="{{post.kotuk}}" disabled> 
+            </td>
+            <td>
+                <input type="text", name="biko" value="{{post.biko}}" disabled> 
+            </td> 
+        </tr>
+    </table>
+    <input type="submit" value="削除">
+</form>
+<a href="/"  role="botton">一覧に戻る</a>
+{% endblock %}

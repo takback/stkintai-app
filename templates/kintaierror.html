@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<html><head>
+    <!--CSSを埋め込む-->
+    <link rel="stylesheet"
+    href="{{url_for('static',filename='style.css')}}">
+
+    <!--ブラウザバック禁止　JavaScript-->
+    <script>
+        window.onload = function() {
+        history.pushState(null, null, null);
+        window.addEventListener("popstate", function (e) {
+        history.pushState(null, null, null);
+        return;});};
+    </script>
+</head></html>
+
+<img src="/image/R3.jpg" alt="写真">
+<h2>注意❕</h2>
+<h2>勤怠入力してください。</h2>
+<form method="POST">
+<a href="/{{id}}/kintaireturn"  role="botton">勤怠入力へ</a>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<html><head>
+    <!--CSSを埋め込む-->
+    <link rel="stylesheet"
+    href="{{url_for('static',filename='style.css')}}">
+</head></html>
+
+<img src="/image/R3.jpg" alt="写真">
+<h1>エラー画面</h1>
+<h1>エラー発生しました。</h1>
+<form method="POST">
+<a href="/login"  role="botton">ログインに戻る</a>
+{% endblock %}

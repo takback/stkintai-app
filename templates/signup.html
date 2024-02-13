@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+<html><head>
+    <!--CSSを埋め込む-->
+    <link rel="stylesheet"
+    href="{{url_for('static',filename='style.css')}}">
+</head></html>
+
+<img src="/image/R3.jpg" alt="写真">
+<h1>新規ユーザー登録</h1>
+<!--エラーメッセージ-->
+<p style="color:red">{{error_message}} </p>
+    
+<!--ログインフォーム-->
+<form method="POST">
+    <table border="2">
+        <tr>
+            <th>社員番号</th>
+            <th>氏名</th>
+            <th>パスワード</th>
+        </tr>
+        <tr>
+            <td>
+                <input type="text", name="roster" vallue="{{roster}}">
+            </td>
+            <td>
+                <input type="text", name="name" vallue="{{name}}">
+            </td>
+            <td>
+                <input type="password", name="password">
+            </td>
+        </tr>
+    </table>
+    <input type="submit" value="ユーザー登録">
+</form>
+<a href="/login" role="botton">ログイン画面へ戻る</a>
+{% endblock %}

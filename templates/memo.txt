@@ -1,0 +1,33 @@
+#バリデーションクラス
+class Form(FlaskForm):
+    string = StringField('文字列')
+    text = TextAreaField('テキスト')
+
+    def validate_string(self, string):
+        '''
+        -未入力禁止
+        -文字制限6文字で制限
+        -半角英数　数字のみで制限
+        -文字数制限 30文字以内
+        -'''
+        if string.data =='':
+            raise ValidationError('値を入力してください。')
+        
+        if len(string.data) == 6:
+            raise ValidationError('値は6桁で入力してください。')
+        
+        if len(string.data) == 6:
+            raise ValidationError('数字で入力してください。')
+        
+        if len(string.data) > 30:
+            raise ValidationError('30文字以内で入力してください。')
+        
+    def validate_text(self,text):
+        '''
+        -未入力禁止
+        -文字数制限 30文字以内
+        -'''
+        if text.data == '':
+            raise ValidationError('値を入力してください。')
+        if len(text.data) < 30:
+            raise ValidationError('30文字以内で入力してください。')

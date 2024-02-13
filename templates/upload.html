@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ST勤怠アプリ</title>
+    <style>
+        /* スマートフォン対応 */
+        @media screen and (max-width: 768px) {
+          body {
+            font-size: 18px;
+          }
+        }
+      </style>
+</head>
+<body>
+    {% block content %}
+    <img src="/image/R3.jpg" alt="写真">
+    <h1>カメラ画像保存</h1>
+    <h1></h1>
+    <h3>タイムシートを撮影して</h3>
+    <h3>画像を保存</h3>
+
+    <form action="{{url_for('upload')}}" method="POST" enctype="multipart/form-data">
+        <input type="file" name="photo_data" accept="image/*">
+
+        <input type="submit" value="送信" > 
+    </form>
+    {% endblock %}
+</body>
+</html>

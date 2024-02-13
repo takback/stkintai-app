@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ST勤怠アプリ</title>
+    <style>
+        /* スマートフォン対応 */
+        @media screen and (max-width: 768px) {
+          body {
+            font-size: 18px;
+          }
+        }
+      </style>
+</head>
+<body>
+    
+    {% block content %}
+    <img src="/image/R3.jpg" alt="写真">
+    <h2>写真のアップロードが</h2>
+    <h2>完了しました。</h2>
+    <h2>お疲れ様でした。</h2>
+    <h2></h2>
+    <h2>{{filename}}</h2>
+
+    <a href="/logout"  role="botton">ログアウト</a>
+    {% endblock %}
+</body>
+</html>
+

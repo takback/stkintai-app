@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block content %}
+<html><head>
+    <!--CSSを埋め込む-->
+    <link rel="stylesheet"
+    href="{{url_for('static',filename='style.css')}}">
+    <style>
+        /* スマートフォン対応 */
+        @media screen and (max-width: 768px) {
+          body {
+            font-size: 18px;
+          }
+        }
+      </style>
+</head></html>
+
+<img src="/image/R3.jpg" alt="写真">
+<h1>入力内容確認</h1>
+<P>問題なければ「進む」を押してください</P>
+<form method="POST">
+<!--<form action="/store-post" method="POST">-->
+    <table border="2">
+        <tr>
+            <th>40Lオリコン数</th>
+        </tr>
+        <tr>
+            <td>
+                <input type="text", name="or40" value="{{or40}}">
+            </td>
+        </tr>
+    </table>
+    <table border="2">
+        <tr>
+            <th>60Lオリコン数</th>
+        </tr>
+        <tr>
+            <td>
+                <input type="text", name="or40" value="{{or60}}">
+            </td>
+        </tr>
+    </table>
+    <table border="2">
+        <tr>
+            <th>冷・アイス・食用オリコン数</th>
+        </tr>
+        <tr>
+            <td>
+                <input type="text", name="or40" value="{{iceo}}">
+            </td>
+        </tr>
+    </table>
+    <table border="2">
+        <tr>
+            <th>冷・アイス・食用ケース数</th>
+        </tr>
+        <tr>
+            <td>
+                <input type="text", name="or40" value="{{icec}}">
+            </td>
+ 　　　 </tr>
+    </table>
+    <table border="2">
+        <tr>
+            <th>酒コン数</th>
+        </tr>
+        <tr>
+            <td>
+                <input type="text", name="or40" value="{{sake}}">
+            </td>
+        </tr>
+    </table>
+</form>
+
+<a href="/kagoin" role="button">次へ</a>
+<!--<a href="/"  role="botton">実施店舗確認</a>
+<a href="/chargein"  role="botton">料金算出項目入力</a>-->
+{% endblock %}

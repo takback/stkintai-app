@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% block content %}
+<html><head>
+    <!--CSSを埋め込む-->
+    <link rel="stylesheet"
+    href="{{url_for('static',filename='style.css')}}">
+</head></html>
+  
+<img src="/image/R3.jpg" alt="写真">
+<h1>DB登録確認画面 実績</h1>
+<a href="/regist" role="botton">新規登録</a>
+<a href="/logout" role="botton">ログアウト</a>
+　　{% if storedat_list == [] %}
+        <P>実績は登録されていません。</P>
+    {% else %}
+        <table border="2">
+            <tr>
+                <th>ID</th>
+                <th>実施日</th>
+                <th>店舗NO</th>
+                <th>企業名</th>
+                <th>店舗名</th>
+                <th>40L数</th>
+                <th>60L数</th>
+                <th>食オリコン</th>
+                <th>食ケース</th>
+                <th>酒</th>
+                <th>オリコン</th>
+                <th>赤青テープ</th>
+                <th>ケース</th>
+                <th>合計台車数</th>
+                <th></th>
+            </tr>
+            {% for storedat in storedat_list %}
+             <tr>
+                <td>{{storedat.id}}</td>
+                <td>{{storedat.date}}</td>
+                <td>{{storedat.storeNo}}</td>
+                <td>{{storedat.kigyo}}</td>
+                <td>{{storedat.store}}</td>
+                <td>{{storedat.foL}}</td>
+                <td>{{storedat.siL}}</td>
+                <td>{{storedat.oricon}}</td>
+                <td>{{storedat.cas}}</td>
+                <td>{{storedat.sake}}</td>
+                <td>{{storedat.Oric}}</td>
+                <td>{{storedat.Tape}}</td>
+                <td>{{storedat.cae}}</td>
+                <td>{{storedat.Total}}</td>
+                <td>
+                    <a href="/{{storedat.id}}/edit" role="button">編集</a>
+                </td>
+                <td>
+                    <a href="/{{storedat.id}}/delete" role="button">削除</a>
+                </td>
+
+            </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+    <h1>DB登録確認画面 勤怠</h1>
+    {% if kintai_list == []%}
+        <P>実績は登録されていません。</P>
+    {% else %}
+        <table border="2">
+            <tr>
+                <th>ID</th>
+                <th>実施ID</th>
+                <th>社員番号</th>
+                <th>実施日</th>
+                <th>リーダー</th>
+                <th>開始</th>
+                <th>終了</th>
+                <th>休憩開始</th>
+                <th>休憩終了</th>
+                <th>交通費(円)</th>
+                <th>交通費(Km)</th>
+                <th>備考</th>
+                <th></th>
+            </tr>
+            {% for kintai in kintai_list %}
+             <tr>
+                <td>{{kintai.unum}}</td>
+                <td>{{kintai.datid}}</td>
+                <td>{{kintai.roster}}</td>
+                <td>{{kintai.date}}</td>
+                <td>{{kintai.leader}}</td>
+                <td>{{kintai.storein}}</td>
+                <td>{{kintai.storeout}}</td>
+                <td>{{kintai.kyus}}</td>
+                <td>{{kintai.kyue}}</td>
+                <td>{{kintai.kotue}}</td>
+                <td>{{kintai.kotuk}}</td>
+                <td>{{kintai.biko}}</td>
+                <td>
+                    <a href="/{{kintai.unum}}/edit" role="button">編集</a>
+                </td>
+                <td>
+                    <a href="/{{kintai.unum}}/deletek" role="button">削除</a>
+                </td>
+
+            </tr>
+            {% endfor %}
+        </table>
+        
+    {% endif %}
+
+    
+{% endblock %}

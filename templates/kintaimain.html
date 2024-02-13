@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block content %}
+<html><head>
+    <!--CSSを埋め込む-->
+    <link rel="stylesheet"
+    href="{{url_for('static',filename='style.css')}}">
+    <style>
+        /* スマートフォン対応 */
+        @media screen and (max-width: 768px) {
+          body {
+            font-size: 18px;
+          }
+        }
+    </style>
+    <!--ブラウザバック禁止　JavaScript-->
+    <!--ブラウザバック禁止　JavaScript-->
+    <script>
+        window.onload = function() {
+        history.pushState(null, null, null);
+        window.addEventListener("popstate", function (e) {
+        history.pushState(null, null, null);
+        return;});};
+    </script>
+
+<img src="/image/R3.jpg" alt="写真">
+<h1>勤怠確認画面</h1>
+
+
+    <P1>実施店舗の内容を確認してください。</P1>
+    <!--<form method="POST">-->
+    <form action="/{{id}}/kintaimain" method="POST">
+        <table border="2">
+            <tr>
+                <th>ID</th>
+                <th>実施日</th>
+                <th>店舗NO</th>
+                <th>企業名</th>
+                <th>店舗名</th>
+            </tr>
+             <tr>
+                <td>{{id}}</td>
+                <td>{{post.date}}</td>
+                <td>{{post.storeNo}}</td>
+                <td>{{post.kigyo}}</td>
+                <td>{{post.store}}</td>
+            </tr>
+        </table>  
+        <P1>勤怠の入力内容を確認してください。</P1>
+        <table border="2">
+            <tr>
+                <th>No</th><th>社員番号</th><th>氏名</th><th>リーダー</th><th>合計カゴ車台数</th><th>開始</th><th>終了</th><th>休憩開始</th> <th>休憩終了</th><th>交通費(円)</th><th>交通費(km)</th><th>備考</th>
+            </tr>
+            {% for kintai in kintai_list %}
+             <tr>
+                <td>{{kintai.Unum}}</td>
+                <td>{{kintai.roster}}</td>
+                <td>{{kintai.name}}</td>
+                <td>{{kintai.leader}}</td>
+            {% if kintai.leader == 1 %}
+                <td>{{kintai.total}}</td>
+            {% else %}
+                <td>{{""}}</td>
+            {% endif %}
+                <td>{{kintai.storein}}</td>
+                <td>{{kintai.storeout}}</td>
+                <td>{{kintai.kyus}}</td>
+                <td>{{kintai.kyue}}</td>
+                <td>{{kintai.kotue}}</td>
+                <td>{{kintai.kotuk}}</td> 
+                <td>{{kintai.biko}}</td>
+                <td>
+                    <a href="/{{id}}/{{kintai.Unum}}/editk" role="button">編集</a>
+                </td>
+                <!--<td>
+                    <a href="/{{kintai.unum}}/deletek" role="button">削除</a>
+                </td>-->
+
+            </tr>
+            {% endfor %}
+        </table> 
+        <input type="submit" value="確定(CSV出力)・次へ" >   
+    </form>
+    
+    <!--<a href="/{{id}}/kintaierror" role="button">戻る</a>-->
+
+    <a href="/upload" role="button">カメラ起動画面へ</a>
+
+    <a href="/logout"  role="botton">ログアウト</a>
+</head></html>
+       
+{% endblock %}

@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+{% block content %}
+<html><head>
+    <!--CSSを埋め込む-->
+    <link rel="stylesheet"
+    href="{{url_for('static',filename='style.css')}}">
+    <style>
+        /* スマートフォン対応 */
+        @media screen and (max-width: 768px) {
+          body {
+            font-size: 18px;
+          }
+        }
+      </style>
+    <!--ブラウザバック禁止　JavaScript-->
+    <script>
+        window.onload = function() {
+        history.pushState(null, null, null);
+        window.addEventListener("popstate", function (e) {
+        history.pushState(null, null, null);
+        return;});};
+    </script>
+
+
+<img src="/image/R3.jpg" alt="写真">
+<h1>カゴ台車入力</h1>
+<h3>入力なしの場合は0で入力してください</h3>
+<!--<form method="POST">-->
+<form action="/{{post.id}}/kagoin" method="POST">
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>{{post.id}}</th>
+        </tr>
+        </tr>
+    </table>
+    <table border="2">
+        <tr>
+            <th>実施日</th>
+        </tr>
+        <tr>
+            <th>{{post.date}}</th> 
+        </tr>
+    </table>
+    <table border="2">
+        <tr>
+            <th>店舗コード</th>
+        </tr>
+        <tr>
+            <th>{{post.storeNo}}</th>  
+        </tr>
+    </table>
+    <table border="1">
+        <tr>
+            <th>企業名</th>
+        </tr>
+        <tr>
+            <th>{{post.kigyo}}</th> 
+        </tr>
+    </table>
+    <table border="1">
+        <tr>
+            <th>店舗名</th>
+        </tr>
+        <tr>
+            <th>{{post.store}}</th> 
+        </tr>
+    <table border="1">
+        <tr>
+            <th>オリコン数</th>
+        </tr>
+        <tr>
+            <td>
+                <input type="int" required="required", name="Oric" value="{{Oric}}">
+            </td>
+        </tr>
+        <tr>
+            <th>赤・青テープ</th>
+        </tr>
+        <tr>
+            <td>
+                <input type="int" required="required", name="Tape"  value="{{Tape}}">
+            </td>
+        </tr>
+        <tr>
+            <th>ケース数</th>
+        </tr>
+        <tr>
+            <td>
+                <input type="int" required="required", name="cae"  value="{{cae}}">
+            </td>
+        </tr>
+    </table>
+    <!--<table border="1">
+        <tr>
+            <th>合計数</th>
+        </tr>
+        <tr>
+            <td>
+                <input type="int", name="Total" ,value="{{total}}">
+            </td>
+        </tr>
+    </table>-->
+<input type="submit" value="登録・次へ" >
+
+</form>
+<a href="/logout"  role="botton">ログアウト</a>
+<!--<a href="/{{post.id}}/kagoin" role="button">次へ</a>>
+<a href="/"  role="botton">一覧に戻る</a>
+<a href="/"  role="botton">一覧に戻る</a>-->
+</head></html>
+{% endblock %}

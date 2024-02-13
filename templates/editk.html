@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block content %}
+<html><head>
+    <!--CSSを埋め込む-->
+    <link rel="stylesheet"
+    href="{{url_for('static',filename='style.css')}}">
+</head></html>
+
+<img src="/image/R3.jpg" alt="写真">
+<h1>編集</h1>
+<form method="POST">
+    <table border="2">
+        <tr>
+            <th>ID</th>
+            <th>実施日</th>
+            <th>店舗NO</th>
+            <th>企業名</th>
+            <th>店舗名</th>
+        </tr>
+         <tr>
+            <td>{{id}}</td>
+            <td>{{post.date}}</td>
+            <td>{{post.storeNo}}</td>
+            <td>{{post.kigyo}}</td>
+            <td>{{post.store}}</td>
+        </tr>
+    </table>  
+    <table border="2"> 
+        <tr>
+            <th>No</th>
+            <th>社員番号</th>
+            <th>氏名</th>
+            <th>ﾘｰﾀﾞｰ</th>
+            <th>開始</th>
+            <th>終了</th>
+            <th>休憩開始</th>
+            <th>休憩終了</th>
+            <th>交通費(円)</th>
+            <th>交通費(㎞)</th>
+            <th>備考</th>
+        </tr>
+        {%for kintai in kintai_list %}
+        <tr>
+            <td>
+                {{kintai.Unum}}
+            </td>
+            <td>
+                <input type="integer"minlength="7" maxlength="7", name="roster" value="{{kintai.roster}}">
+            </td>
+            <td>{{kintai.name}}</td>
+            <td>
+                <input type="radio", name="leader" value="1">
+            </td>
+            <td>
+                <input type="time", name="storein" value="{{kintai.storein}}">
+            </td>
+            <td>
+                <input type="time", name="storeout" value="{{kintai.storeout}}">
+            </td>
+            <td>
+                <input type="time", name="kyus" value="{{kintai.kyus}}">
+            </td>
+            <td>
+                <input type="time", name="kyue" value="{{kintai.kyue}}">
+            </td>
+            <td>
+                <input type="integer", name="kotue" value="{{kintai.kotue}}">
+            </td>
+            <td>
+                <input type="integer", name="kotuk" value="{{kintai.kotuk}}">
+            </td>
+            <td>
+                <input type="text", name="biko" value="{{kintai.biko}}">
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <input type="submit" value="編集">
+</form>
+<a href="/"  role="botton">一覧に戻る</a>
+
+{% endblock %}

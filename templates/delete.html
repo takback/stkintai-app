@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block content %}
+<html><head>
+    <!--CSSを埋め込む-->
+    <link rel="stylesheet"
+    href="{{url_for('static',filename='style.css')}}">
+</head></html>
+
+<img src="/image/R3.jpg" alt="写真">
+<h1>削除</h1>
+<p>以下のメモを削除しますか？</p>
+<form method="POST">
+    <table border="2">
+        <tr>
+            <th>実施日時</th>
+            <th>企業NO</th>
+            <th>企業名</th>
+            <th>店舗名</th>
+        </tr>
+        <tr>
+            <td>
+                <input type="text", name="date" value="{{post.date}}" disabled>
+            </td>
+            <td>
+                <input type="text", name="storeNo" value="{{post.storeNo}}" disabled> 
+            </td>
+            <td>
+                <input type="text", name="kigyo" value="{{post.kigyo}}" disabled>
+            </td>
+            <td>
+                <input type="text", name="store" value="{{post.store}}" disabled> 
+            </td>
+            <td>
+                <input type="text", name="foL" value="{{post.foL}}" disabled>
+            </td>
+            <td>
+                <input type="text", name="siL" value="{{post.siL}}" disabled> 
+            </td>
+            <td>
+                <input type="text", name="oricon" value="{{post.oricon}}" disabled>
+            </td>
+            <td>
+                <input type="text", name="cas" value="{{post.cas}}" disabled> 
+            </td>
+            <td>
+                <input type="text", name="sake" value="{{post.sake}}" disabled> 
+            </td>
+        </tr>
+    </table>
+    <input type="submit" value="削除">
+</form>
+<a href="/"  role="botton">一覧に戻る</a>
+{% endblock %}

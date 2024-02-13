@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block content %}
+<html><head>
+    <!--CSSを埋め込む-->
+    <link rel="stylesheet"
+    href="{{url_for('static',filename='style.css')}}">
+    <style>
+        /* スマートフォン対応 */
+        @media screen and (max-width: 768px) {
+          body {
+            font-size: 18px;
+          }
+        }
+      </style>
+</head></html>
+
+<img src="/image/R3.jpg" alt="写真">
+<h1>実施店舗確認</h1>
+<P>問題なければ「進む」を押してください</P>
+ <!--<form method="POST">-->
+   <form action="/{{date}}/{{storeNo}}/{{post.kigyo}}/{{post.store}}/charge" method="POST" >
+    <table border="2">
+        <tr>
+            <th>実施日</th>
+        </tr>
+        <tr>
+            <th>{{date}} </th> 
+        </tr>
+    </table>
+    <table border="1">
+        <tr>
+            <th>店舗コード</th>
+        </tr>
+        <tr>
+            <th>{{storeNo}}</th>  
+        </tr>
+    </table>
+    <table border="2">
+        <tr>
+            <th>企業名</th>
+        </tr>
+        <tr>
+            <th>{{post.kigyo}}</th> 
+        </tr>
+    </table>
+    <table border="1">
+        <tr>
+            <th>店舗名</th>
+        </tr>
+        <tr>
+            <th>{{post.store}}</th> 
+        </tr>
+    </table>
+    <input type="submit" value="次へ" >
+    
+    
+    
+</form>
+    <a href="/store"  role="botton">戻る</a>
+    <a href="/logout"  role="botton">ログアウト</a>
+
+<!--<a href="/{{date}}/{{storeNo}}/{{post.kigyo}}/{{post.store}}/chargein" role="button">次へ</a>
+<a href="/"  role="botton">実施店舗確認</a>
+<a href="/chargein"  role="botton">料金算出項目入力</a>-->
+{% endblock %}

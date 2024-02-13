@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+<html><head>
+    <!--CSSを埋め込む-->
+    <link rel="stylesheet"
+    href="{{url_for('static',filename='style.css')}}">
+    <style>
+        /* スマートフォン対応 */
+        @media screen and (max-width: 768px) {
+          body {
+            font-size: 18px;
+          }
+        }
+      </style>
+
+
+<img src="/image/R3.jpg" alt="写真">
+<h1>ログイン画面</h1>
+<!--エラーメッセージ-->
+<p style="color:red">{{error_message}} </p>
+    
+<!--ログインフォーム-->
+<form method="POST">
+    <table border="2" >
+        <tr>
+            <th>社員番号</th>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" minlength="7" maxlength="7", name="roster" vallue="{{roster}}">
+            </td>
+        </tr>
+    </table>
+
+    <table border="2">
+        <tr>
+            <th>パスワード</th>
+        </tr>
+        <tr>
+            <td>
+                <input type="password", name="password">
+            </td>
+        </tr>
+    </table>
+    <input type="submit" value="ログイン">
+</form>
+<a href="/signup" role="botton">新規ユーザー登録</a>
+</head></html>
+{% endblock %}

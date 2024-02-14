@@ -4,12 +4,27 @@
     <!--CSSを埋め込む-->
     <link rel="stylesheet"
     href="{{url_for('static',filename='style.css')}}">
-</head></html>
-
-<img src="/image/R3.jpg" alt="写真">
-<h1>新規ユーザー登録</h1>
-<!--エラーメッセージ-->
-<p style="color:red">{{error_message}} </p>
+    <style>
+        /* スマートフォン対応 */
+        @media screen and (max-width: 768px) {
+          body {
+            font-size: 18px;
+          }
+        }
+        /*ボタンスタイル*/
+        .btn {
+            background-color: rgb(190, 216, 239);
+            color: black;
+            font-size: 20px;
+            padding: 15px 36px;
+        }
+        .btn1 {
+            background-color: white;
+            color: black;
+            font-size: 14px;
+            padding: 10px 30px;
+        }
+    </style>
     
 <!--ログインフォーム-->
 <form method="POST">

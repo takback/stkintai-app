@@ -11,6 +11,19 @@
             font-size: 18px;
           }
         }
+        /*ボタンスタイル*/
+        .btn {
+            background-color: rgb(190, 216, 239);
+            color: black;
+            font-size: 16px;
+            padding: 10px 20px;
+        }
+        .btn1 {
+            background-color: white;
+            color: black;
+            font-size: 14px;
+            padding: 10px 20px;
+        }
     </style>
     <!--ブラウザバック禁止　JavaScript-->
     <script>
@@ -82,7 +95,8 @@
         <p></p>
         <p></p>
         <p></p> 
-        <input type="submit" value="確定(CSV出力)・次へ" >  
+        <!--<input type="submit" value="確定(CSV出力)・次へ" > --> 
+        <button class="btn" onclick="location.href='submit'">登録・次へ </button>
         <p></p>
         <p></p>
         <p></p>  
@@ -92,7 +106,7 @@
     
     <a href="/upload" role="button">カメラ起動画面へ</a> &nbsp;-->
     <P1>ログアウトする</P1><br>
-    <button onclick="location.href='/logout'">ログアウト</button>
+    <button class="btn1" onclick="location.href='/logout'">ログアウト</button>
     <!--<P1>ログアウトする</P1>
     <a href="/logout"  role="botton">ログアウト</a>-->
 </head></html>

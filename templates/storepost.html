@@ -11,6 +11,19 @@
             font-size: 18px;
           }
         }
+        /*ボタンスタイル*/
+        .btn {
+            background-color: rgb(190, 216, 239);
+            color: black;
+            font-size: 16px;
+            padding: 10px 20px;
+        }
+        .btn1 {
+            background-color: white;
+            color: black;
+            font-size: 14px;
+            padding: 10px 20px;
+        }
       </style>
 </head></html>
 
@@ -54,17 +67,18 @@
     <p></p>
     <p></p>
     <p></p> 
-    <input type="submit" value="次へ" >
+    <!--<input type="submit" value="次へ" >-->
+    <button class="btn" onclick="location.href='submit'">次へ </button>
     <p></p>
     <p></p>
     <p></p>  
 </form>
 <P1>前の画面に戻る</P1><br>
-<button onclick="location.href='/signup'">前に戻る</button><br>
+<button class="btn1" onclick="location.href='/signup'">前に戻る</button><br>
 <!--<P1>前の画面に戻る</P1>&nbsp;<a href="/store"  role="botton">戻る</a><br>-->
 <p></p>
 <P1>ログアウトする</P1><br>
-<button onclick="location.href='/logout'">ログアウト</button>
+<button class="btn1" onclick="location.href='/logout'">ログアウト</button>
 <!--<P1>ログアウトする</P1>&nbsp;<a href="/logout"  role="botton">ログアウト</a><br>-->
 
 <!--<a href="/{{date}}/{{storeNo}}/{{post.kigyo}}/{{post.store}}/chargein" role="button">次へ</a>

@@ -11,6 +11,19 @@
             font-size: 18px;
           }
         }
+        /*ボタンスタイル*/
+        .btn {
+            background-color: rgb(190, 216, 239);
+            color: black;
+            font-size: 16px;
+            padding: 10px 20px;
+        }
+        .btn1 {
+            background-color: white;
+            color: black;
+            font-size: 14px;
+            padding: 10px 20px;
+        }
       </style>
 
 
@@ -45,13 +58,14 @@
     <p></p>
     <p></p>
     <p></p>
-    <input type="submit" value="ログイン">
+    <!--<input type="submit" size="20" value="ログイン" >-->
+    <button class="btn" onclick="location.href='submit'">ログイン </button>
 </form>
 <p></p>
 <p></p>
 <P1>新規ユーザー登録は以下から</P1>
 <br>
-<button onclick="location.href='/signup'">新規ユーザー登録</button>
+<button class="btn1" onclick="location.href='/signup'">新規ユーザー登録 </button>
 <!--<p></p>
 <a href="/signup" role="botton">新規ユーザー登録</a>-->
 </head></html>

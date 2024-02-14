@@ -10,6 +10,20 @@
             font-size: 18px;
           }
         }
+        /*ボタンスタイル*/
+        .btn {
+            background-color: rgb(190, 216, 239);
+            color: black;
+            font-size: 16px;
+            padding: 10px 20px;
+        }
+        .btn1 {
+            background-color: white;
+            color: black;
+            font-size: 14px;
+            padding: 10px 20px;
+        }
+      </style>
       </style>
 
 
@@ -40,12 +54,13 @@
     <p></p>
     <p></p>
     <p></p>
-    <input type="submit" value="次へ" >
+    <!--<input type="submit" value="次へ" >-->
+    <button class="btn" onclick="location.href='submit'">次へ </button>
 </form>
 <p></p>
 <p></p>
 <P1>ログアウトする</P1><br>
-<button onclick="location.href='/logout'">ログアウト</button>
+<button class="btn1" onclick="location.href='/logout'">ログアウト</button>
 <!--<a href="/"  role="botton">DB登録確認画面</a>-->
 </body></head></html>
 {% endblock %}

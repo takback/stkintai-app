@@ -12,3 +12,7 @@ body {
   background-color: rgb(2, 2, 45);
   color: black;
   }
+button {
+  width:100em;
+  height: 20em;;
+}

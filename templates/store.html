@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<html><head>
-    <!--CSSを埋め込む-->
+<html><head><body>
     <link rel="stylesheet"
     href="{{url_for('static',filename='style.css')}}">
     <style>
@@ -45,7 +44,8 @@
 </form>
 <p></p>
 <p></p>
-<P1>ログアウトする</P1>&nbsp;<a href="/logout"  role="botton">ログアウト</a>
+<P1>ログアウトする</P1><br>
+<button onclick="location.href='/logout'">ログアウト</button>
 <!--<a href="/"  role="botton">DB登録確認画面</a>-->
-</head></html>
+</body></head></html>
 {% endblock %}

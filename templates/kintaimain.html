@@ -48,7 +48,7 @@
         <P1>勤怠の入力内容を確認してください。</P1>
         <table border="2">
             <tr>
-                <th>No</th><th>社員番号</th><th>氏名</th><th>リーダー</th><th>合計カゴ車台数</th><th>開始</th><th>終了</th><th>休憩開始</th> <th>休憩終了</th><th>交通費(円)</th><th>交通費(km)</th><th>備考</th>
+                <th>No</th><th>社員番号</th><th>氏名</th><th>リーダー</th><th>合計カゴ車台数</th><th>開始</th><th>終了</th><th>休憩開始</th> <th>休憩終了</th><th>交通費(円)</th><th>交通費(km)</th><th>備考</th><th>修正</th>
             </tr>
             {% for kintai in kintai_list %}
              <tr>
@@ -69,7 +69,9 @@
                 <td>{{kintai.kotuk}}</td> 
                 <td>{{kintai.biko}}</td>
                 <td>
-                    <a href="/{{id}}/{{kintai.Unum}}/editk" role="button">編集</a>
+                    <!--<a href="/{{id}}/{{kintai.Unum}}/editk" role="button">編集</a>-->
+                    <button onclick="location.href='/{{id}}/{{kintai.Unum}}/editk'">編集</button>
+                    <!--<a href="/{{id}}/{{kintai.Unum}}/editk" role="button">編集</a>-->
                 </td>
                 <!--<td>
                     <a href="/{{kintai.unum}}/deletek" role="button">削除</a>

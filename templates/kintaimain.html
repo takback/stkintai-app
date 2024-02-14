@@ -13,7 +13,6 @@
         }
     </style>
     <!--ブラウザバック禁止　JavaScript-->
-    <!--ブラウザバック禁止　JavaScript-->
     <script>
         window.onload = function() {
         history.pushState(null, null, null);
@@ -70,8 +69,8 @@
                 <td>{{kintai.biko}}</td>
                 <td>
                     <!--<a href="/{{id}}/{{kintai.Unum}}/editk" role="button">編集</a>-->
-                    <button onclick="location.href='/{{id}}/{{kintai.Unum}}/editk'">編集</button>
-                    <!--<a href="/{{id}}/{{kintai.Unum}}/editk" role="button">編集</a>-->
+                    <!--<button onclick="location.href="/{{id}}/{{kintai.Unum}}/editk"">編集</button>-->
+                    <a href="/{{id}}/{{kintai.Unum}}/editk" role="button">編集</a>
                 </td>
                 <!--<td>
                     <a href="/{{kintai.unum}}/deletek" role="button">削除</a>
